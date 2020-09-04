@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="intro">
+                <div class="control">
+                    <label>
+                        Child Count
+                        <input id="idcount" type="number" value="5"/>
+                    </label>
+                    <button id="btn">Click</button>
+                </div>
+			    <div class="example"></div>
+			</div>
+		</div>
+    </div>
+    <script defer src="/circle-progress.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var  numberOfChild = 5;
+
+            var mainDiv = document.querySelector('.example')
+
+            loadCharts(numberOfChild);
+            //var btn = document.querySelector('#')
+
+            document.querySelector('#btn').addEventListener('click', function(){
+                    var newNum = parseInt(document.querySelector('#idcount').value);
+                    mainDiv.innerHTML = "";
+                    console.log(newNum)
+                    loadCharts(newNum);
+                })
+
+
+                function loadCharts(num){
+                    for(let i=0; i<num; i++){
+                    var chartDiv = document.createElement("DIV")
+                    chartDiv.classList="progress"+i
+                    mainDiv.appendChild(chartDiv)
+
+                    
+                    new CircleProgress('.progress'+i, {
+                    max: 100,
+                    value: Math.floor(Math.random() * 100),
+                    textFormat: 'percent',
+                });
+                }
+            }
+        });
+    </script>
+</body>
+</html>

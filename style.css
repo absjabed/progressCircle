@@ -1,0 +1,26 @@
+/* .circle-progress-value {
+	stroke-width: 6px;
+	stroke: hsl(39, 100%, 50%);
+}
+.circle-progress-circle {
+	stroke-width: 6px;
+	stroke: hsl(39, 100%, 85%);
+}
+.circle-progress-text {
+	fill: hsl(39, 100%, 50%);
+} */
+
+.example{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+.circle-progress-value {
+	stroke-width: 6px;
+	stroke: hsl(280, 90%, 50%);
+	stroke-linecap: round;
+}
+.circle-progress-circle {
+	stroke-width: 2px;
+}
